@@ -1,4 +1,4 @@
-# APPLICATION TEMPLATE 
+# SALARY API  
 
 | AUTHOR |CREATED ON |
 |--------|-----------|
@@ -10,7 +10,7 @@ We need an Api microservice which is responsible for storing all the salary rela
 ## Pre-requisites
 The Salary API application have some database, cache manager and package dependencies. Ensure you have the following on your system :
 * ScyllaDB
-* PostgreSQL
+* Redis
 * Maven
 * Migrate
 
@@ -48,13 +48,12 @@ The requests are received by the API Gateway or the controller layer of the Sala
 The controller forwards the request to the service layer, which contains the business logic. The service layer processes the request, applying necessary business rules and logic. For example, it might calculate bonuses, apply tax rules, or validate salary caps.
 
 ### Database Interaction:
-Depending on the type of request, the service layer will interact with one or both databases:
+The service layer will interact with database:
 **ScyllaDB**: For operations requiring high performance and low latency, such as real-time data processing, ScyllaDB is used. It might store frequently accessed data or handle operations that require fast read/write capabilities.
 
-**PostgreSQL**: For relational data operations, such as complex queries, transactions, and data that require strong consistency, PostgreSQL is used. This database might store detailed salary records, employee information, or historical data.
 
 ### Data Retrieval/Modification:
-The service layer sends queries to the respective database (ScyllaDB or PostgreSQL) to retrieve or modify data.
+The service layer sends queries to the respective database (ScyllaDB ) to retrieve or modify data.
 Read Operations: For read operations, the data is fetched from the database, processed if necessary, and then sent back up through the service layer to the controller.
 Write Operations: For write operations, the data is validated and then saved to the appropriate database. The result of the operation (success or failure) is sent back through the service layer to the controller.
 
@@ -69,12 +68,15 @@ To install ScyllaDB, execute the following commands:
 curl -sSf get.scylladb.com/server | sudo bash
 sudo scylla_io_setup
 ```
-**PostgreSQL**
-Install PostgreSQL
-To install PostgreSQL, use the following commands:
+**Redis**
+Install Redis
+To install Redis, use the following commands:
 ```
-sudo apt install postgresql postgresql-contrib
-sudo systemctl start postgresql.service
+ sudo apt install redis-server
+ sudo systemctl start redis-server
+ sudo systemctl status redis-server
+ redis-cli
+ ping
 ```
 ### Required Libraries
 **Install JDK 17**
