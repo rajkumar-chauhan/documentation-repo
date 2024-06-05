@@ -25,7 +25,7 @@ The Salary API application have some database, cache manager and package depende
 ## Build-Time Dependency
 | Name | Version | Description |
 |:-----:|:------:|:------------:|
-|Maven|3.6+|It helps manage project dependencies, build processes, and project documentation.|
+|Maven|3.+|It helps manage project dependencies, build processes, and project documentation.|
 
 ## Run-Time Dependency
 |Name  | Version | Description |
@@ -123,14 +123,13 @@ java -jar target/salary-api.jar
 Following these steps, you will set up the necessary environment for the Salary API, build the project, and run the application. Ensure that all commands are executed in the correct order and in a terminal with sufficient privileges.
 Other Endpoint are below 
 
-## Endpoints 
-|Endpoint|Method|Description|
-|--------|-------|----------|
-|/api/v1/salary/create/record|POST |Data creation endpoint which accepts certain JSON body to add salary inf|
-|/api/v1/salary/search|GET|Endpoint for searching data information using the params in the URL|    
-|/api/v1/salary/search/all|GET|Endpoint for searching all information across the system|
-|/actuator/prometheus|GET|Application healthcheck and performance metrics are available on this en|
-|/actuator/health|GET|Endpoint for providing shallow healthcheck information about application|
+
+## References 
+|links | Description |
+|-------|------------|
+|https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-linux/|For Redis |
+|https://opensource.docs.scylladb.com/stable/getting-started/install-scylla/install-on-linux.html| For Scylladb|
+|https://github.com/OT-MICROSERVICES/salary-api|For understanding the workflow of salary api|
 
 
 
