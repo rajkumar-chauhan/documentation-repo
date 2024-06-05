@@ -25,7 +25,7 @@ The Salary API application have some database, cache manager and package depende
 ## Build-Time Dependency
 | Name | Version | Description |
 |:-----:|:------:|:------------:|
-|Maven|3.6.3|It helps manage project dependencies, build processes, and project documentation.|
+|Maven|3.6+|It helps manage project dependencies, build processes, and project documentation.|
 
 ## Run-Time Dependency
 |Name  | Version | Description |
