@@ -119,6 +119,18 @@ java -jar target/salary-api.jar
 ```
 ## Conclusion
 Following these steps, you will set up the necessary environment for the Salary API, build the project, and run the application. Ensure that all commands are executed in the correct order and in a terminal with sufficient privileges.
+Other Endpoint are below 
+
+## Endpoints 
+|Endpoint|Method|Description|
+|--------|-------|----------|
+|/api/v1/salary/create/record|POST |Data creation endpoint which accepts certain JSON body to add salary inf|
+|/api/v1/salary/search|GET|Endpoint for searching data information using the params in the URL|    
+|/api/v1/salary/search/all|GET|Endpoint for searching all information across the system|
+|/actuator/prometheus|GET|Application healthcheck and performance metrics are available on this en|
+|/actuator/health|GET|Endpoint for providing shallow healthcheck information about application|
+
+
 
 ## Contact Information 
 |Name|Email Address|
