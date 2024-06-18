@@ -120,4 +120,6 @@ Achieving high availability for SonarQube involves setting up a robust architect
 ## References 
 | Links |
 |--------|
+|https://www.koombea.com/blog/what-is-sonarqube/|
+|https://medium.com/@mrdevsecops/introduction-to-sonarqube-and-its-features-27c2e030068a|
 
