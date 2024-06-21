@@ -31,16 +31,13 @@ This document provides a detailed explanation of how to achieve high availabilit
 **Reliability**: Provide a resilient system that can withstand hardware failures and continue operating without data loss.
 
 ## Key Components for HA in SonarQube
-
-**Database**: SonarQube relies on a database to store configuration, project, and analysis data. Ensuring high availability of the database is crucial.
-
-**Application Nodes**: Multiple SonarQube application nodes running in a cluster to distribute the load.
-
-**Search Nodes**: Nodes dedicated to search functionality, using Elasticsearch.
-
-**Load Balancer**: Distributes incoming requests across multiple SonarQube application nodes.
-
-**Shared Storage**: Ensures that all application nodes can access the necessary files and configurations.
+|Component|Description|
+|---------|-----------|
+|**Database**| SonarQube relies on a database to store configuration, project, and analysis data. Ensuring high availability of the database is crucial.|
+|**Application Nodes**|Multiple SonarQube application nodes running in a cluster to distribute the load.|
+|**Search Nodes**| Nodes dedicated to search functionality, using Elasticsearch.|
+|**Load Balancer**|Distributes incoming requests across multiple SonarQube application nodes.|
+|**Shared Storage**| Ensures that all application nodes can access the necessary files and configurations.|
 
 ## Architecture Overview
 The HA architecture for SonarQube typically involves the following components:
