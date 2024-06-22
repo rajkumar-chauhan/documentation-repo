@@ -1,1 +1,4 @@
+# Dast(JAVA)
 
+## Introduction
+  Dynamic Application Security Testing (DAST) is a type of security testing that analyzes a running application to identify vulnerabilities. Unlike Static Application Security Testing (SAST), which examines source code, DAST tests the application from the outside by simulating attacks to uncover potential weaknesses. This method is particularly useful for detecting runtime issues such as authentication problems, server configuration errors, and vulnerabilities in third-party components.
