@@ -1,4 +1,21 @@
 #  AMI
+
+|CREATED/UPDATED |VERSION|AUTHOR|COMMENT|
+|--------|-----------|-------|---------|
+|21-06-2024|0.1|Rajkumar|Initial Commit|
+
+# Table of Content 
+- [Introduction](#Introduction)
+- [What is AMI](#What-is-AMI)
+- [Why AMI](#Why-AMI)
+- [Different Types of AMIs](#Different-Types-of-AMIs)
+- [Comparison of AMI Types](#Comparison-of-AMI-Types)
+- [ Advantages of Using AMIs](#Advantages-of-Using-AMIs)
+- [ Best Practices](#Best-Practices)
+-  [Conclusion](#Conclusion)
+-  [ Contact Information ](#Contact-Information )
+-  [References](#References )
+
 ## Introduction 
 Amazon Machine Images (AMIs) are pre-configured templates containing the information required to launch an instance in Amazon Elastic Compute Cloud (EC2). An AMI includes the necessary root volume, operating system, application server, and applications. This documentation provides an in-depth understanding of AMIs, different types of tools , comparisons, advantages, best practices, and recommendations.
 ## What is AMI? 
@@ -46,7 +63,7 @@ Applications: Pre-configured software and applications tailored for specific tas
 - Shared by AWS community members.
 - Available publicly but should be used with caution as they may not be regularly updated or secure.
 
-Comparison of AMI Types
+## Comparison of AMI Types
 |Feature	|Amazon Linux AMI	|Marketplace AMI|	Custom AMI|	Community AMI|
 |-------|----------|---------|-----------|---------|
 |Maintenance|	AWS-maintained	|Vendor-maintained|	User-maintained	|Community-maintained|
