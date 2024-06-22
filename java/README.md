@@ -1,5 +1,21 @@
 # DAST (JAVA)
 
+|CREATED/UPDATED |VERSION|AUTHOR|COMMENT|
+|--------|-----------|-------|---------|
+|24-06-2024|0.1|Rajkumar|Initial Commit|
+
+# Table of Content 
+- [Introduction](#Introduction)
+- [What is DAST](#What-is-DAST)
+- [Why DAST](#Why-DAST)
+- [ Different DAST Tools for Java](#Different-DAST-Tools-for-Java)
+- [Comparison of DAST Tools](#Comparison-of-DAST-Tools)
+- [Advantages of DAST](#Advantages-of-DAST)
+- [ Best Practices ](#Best-Practices)
+-  [Conclusion](#Conclusion)
+-  [ Contact Information ](#Contact-Information )
+-  [References](#References )
+
 ## Introduction
 Dynamic Application Security Testing (DAST) is a type of security testing that analyzes a running application to identify vulnerabilities. Unlike Static Application Security Testing (SAST), which examines source code, DAST tests the application from the outside by simulating attacks to uncover potential weaknesses. This method is particularly useful for detecting runtime issues such as authentication problems, server configuration errors, and vulnerabilities in third-party components.
 
@@ -43,7 +59,7 @@ Several DAST tools are available that cater specifically to Java applications. S
 |No Source Code Required| Since DAST is a black-box testing method, it does not require access to the source code, making it suitable for testing third-party applications.|
 |Compliance|Helps in meeting various regulatory requirements by ensuring the application is secure from common vulnerabilities.|
 
-## Best Practices for Implementing DAST
+## Best Practices 
 
 **Integrate Early and Often**: Integrate DAST into your CI/CD pipeline to ensure continuous security testing throughout the development lifecycle.
 
