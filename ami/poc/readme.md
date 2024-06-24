@@ -5,7 +5,7 @@
 |21-06-2024|0.1|Rajkumar|Initial Commit|
 
 ## Purpose 
-The Purpose of this documentation is to setup an  AMI 
+The Purpose of this documentation is to setup an  AMI  
 
 ## Pre-requisite
 You must have a valid AWS account to setup an AMI 
