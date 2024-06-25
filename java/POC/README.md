@@ -7,7 +7,7 @@
 ## Table of Content: 
 - [Introduction](#Introduction)
 - [Pre-requisites](#Pre-requisites)
-- [step-by-step setup Guide](#step-by-step setup guide)
+- [Step-by-Step setup Guide](#Step-by-step-Setup-Guide)
 - [Conclusion](#Conclusion)
 - [Contact Information](#Contact-Information)
 - [References](#References)
