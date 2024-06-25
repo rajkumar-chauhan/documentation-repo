@@ -81,6 +81,7 @@ OWASP ZAP will start  scanning  your application for  vulnerabilities .
 **Step 6** : Report Generation: 
 
 You can also Generate the Report of the analysis by click on the **Report** option and generate it in desired format (HTML, PDF,JSON etc.) for future References. 
+
 ![Screenshot 2024-06-25 115413](https://github.com/rajkumar-chauhan/documentation-repo/assets/160397769/6bdfc77f-d8b1-4290-99c5-20bee91a71d1)
 
 After selecting the format,click on **Generate Report**. Your Report will be generated in your desired directory. 
