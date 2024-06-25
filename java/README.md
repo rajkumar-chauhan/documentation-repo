@@ -1,8 +1,8 @@
-# DAST (JAVA)
+# Java CI checks | DAST
 
 |CREATED/UPDATED |VERSION|AUTHOR|COMMENT|
 |--------|-----------|-------|---------|
-|24-06-2024|0.1|Rajkumar|Initial Commit|
+|25-06-2024|0.1|Rajkumar|Initial Commit|
 
 # Table of Content 
 - [Introduction](#Introduction)
@@ -17,10 +17,10 @@
 -  [References](#References )
 
 ## Introduction
-Dynamic Application Security Testing (DAST) is a type of security testing that analyzes a running application to identify vulnerabilities. Unlike Static Application Security Testing (SAST), which examines source code, DAST tests the application from the outside by simulating attacks to uncover potential weaknesses. This method is particularly useful for detecting runtime issues such as authentication problems, server configuration errors, and vulnerabilities in third-party components.
+This documentation provides a detailed explanation about  DAST  for JAVA Based Applications like Introduction of DAST, Different tools to perform DAST, Advantages,  best practices and many details.Dynamic Application Security Testing (DAST) is a type of security testing that analyzes a running application to identify vulnerabilities. 
 
 ## What is DAST?
-DAST is a black-box testing method used to evaluate the security of an application while it is in operation. By simulating real-world attack scenarios, DAST tools interact with the web application, much like a malicious user would, to find security vulnerabilities that could be exploited. DAST is generally used in the later stages of the development lifecycle, during the testing or deployment phases.
+DAST is a black-box testing method used to evaluate the security of an application while it is in operation. By simulating real-world attack scenarios, DAST tools interact with the web application, much like a malicious user would, to find security vulnerabilities that could be exploited. DAST is generally used in the later stages of the development lifecycle, during the testing or deployment phases. Unlike Static Application Security Testing (SAST), which examines source code, DAST tests the application from the outside by simulating attacks to uncover potential weaknesses. 
 
 ## Why DAST?
 Java applications, often used for enterprise-level applications, are susceptible to a wide range of security threats. DAST can help identify these threats by:
