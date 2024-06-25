@@ -12,6 +12,7 @@
 - [Comparison of DAST Tools](#Comparison-of-DAST-Tools)
 - [Advantages of DAST](#Advantages-of-DAST)
 - [ Best Practices ](#Best-Practices)
+- [POC](#POC)
 -  [Conclusion](#Conclusion)
 -  [ Contact Information ](#Contact-Information )
 -  [References](#References )
@@ -68,6 +69,11 @@ Several DAST tools are available that cater specifically to Java applications. S
 **Regular Updates**: Keep the DAST tools updated to ensure they can detect the latest vulnerabilities and threats.
 
 **Automate Scans**: Automate regular scans to catch vulnerabilities as soon as they are introduced.
+
+## POC
+
+For detailed insights into how to perform DAST for JAVA application, you can view our Proof of Concept (POC) document. Click [here](
+
 
 ## Conclusion
 DAST is a critical component of a comprehensive security strategy for Java applications. By identifying vulnerabilities that are only visible during runtime, DAST complements other security testing methods like SAST. For organizations aiming to secure their Java applications, it is essential to choose the right DAST tool based on their specific needs, such as integration capabilities, ease of use, and accuracy.
