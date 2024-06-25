@@ -17,7 +17,7 @@ This Proof of Concept (POC) aims to demonstrate the effectiveness of DAST in ide
 Dynamic Application Security Testing (DAST) involves evaluating a live application for security vulnerabilities by emulating external threats. OWASP ZAP (Zed Attack Proxy) is a widely used open-source DAST tool designed to detect security flaws in web applications.
 
 ## Pre-requisites
-- [OWASP ZAP](#https://www.zaproxy.org/) 
+- [OWASP ZAP](https://www.zaproxy.org/) 
 - A Running Application(JAVA) to Perform DAST.  
   ![Screenshot 2024-06-25 114014](https://github.com/rajkumar-chauhan/documentation-repo/assets/160397769/ad560f7f-73e1-4820-8e00-e600da9dad06)
 
