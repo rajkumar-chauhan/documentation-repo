@@ -1,1 +1,40 @@
 
+pipeline {
+    agent any
+     
+     environment {
+        REPO_URL = 'https://github.com/rajkumar-chauhan/CI-Scanning-.git'
+    }
+
+    stages {
+        stage('git') {
+            steps {
+                git branch: 'main', url:  "${REPO_URL}"
+            }
+        }
+        stage('gitleaks') {
+            steps {
+                sh 'gitleaks detect -v'
+            }
+        }
+        stage('Run Trivy License Scan') {
+            steps {
+                sh 'trivy fs --security-checks license --format json --output trivy-license-report.json .'
+            }
+        }
+    }
+    
+    post {
+        always {
+
+            slackSend channel: 'random',
+            message: "Find Status of Pipeline:- ${currentBuild.currentResult} ${env.JOB_NAME} ${env.BUILD_NUMBER} ${BUILD_URL}"
+        }
+        success {
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}
