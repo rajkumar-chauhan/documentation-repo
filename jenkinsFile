@@ -1,1 +1,21 @@
+pipeline {
+    agent any
+     
+     environment {
+        REPO_URL = 'https://github.com/rajkumar-chauhan/CI-test-.git'
+    }
+
+    stages {
+        stage('git') {
+            steps {
+                git branch: 'main', url:  "${REPO_URL}"
+            }
+        }
+        stage('gitleaks') {
+            steps {
+                sh 'gitleaks detect -v'
+            }
+        }
+    }
+}
 
