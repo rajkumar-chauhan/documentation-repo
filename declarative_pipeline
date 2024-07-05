@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+        REPO_URL = 'https://github.com/rajkumar-chauhan/CI-Scanning-.git'
+        GIT_BRANCH = 'main'
+        GIT_CREDENTIALS_ID = 'token'
+        GIT_USER_EMAIL = 'rajchauhan9584@gmail.com'
+        GIT_USER_NAME = 'rajkumar-chauhan'
+        COMMIT_MESSAGE = 'Create password Signed-off-by: rajchauhan9584@gmail.com'
+    }
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: env.GIT_BRANCH, credentialsId: env.GIT_CREDENTIALS_ID, url: env.REPO_URL
+            }
+        }
+
+        stage('Set Git User Config') {
+            steps {
+                sh "git config user.email '${env.GIT_USER_EMAIL}'"
+                sh "git config user.name '${env.GIT_USER_NAME}'"
+            }
+        }
+
+        stage('Run Gitleaks') {
+            steps {
+                sh 'gitleaks detect -v'
+            }
+        }
+
+        stage('Run Trivy License Scan') {
+            steps {
+                sh 'trivy fs --security-checks license --format json --output trivy-license-report.json .'
+            }
+        }
+
+        stage('Commit Changes') {
+            steps {
+                sh "git commit --amend --signoff --author='${env.GIT_USER_NAME} <${env.GIT_USER_EMAIL}>' -m '${env.COMMIT_MESSAGE}'"
+            }
+        }
+    }
+
+    post {
+        always {
+            slackSend channel: 'random',
+            message: "Find Status of Pipeline: ${currentBuild.currentResult} ${env.JOB_NAME} ${env.BUILD_NUMBER} ${BUILD_URL}"
+        }
+        success {
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}
