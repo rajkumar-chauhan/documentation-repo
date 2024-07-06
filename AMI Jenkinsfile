@@ -1,0 +1,65 @@
+pipeline {
+    agent any
+    
+    environment {
+        gitRepo = 'https://github.com/rajkumar-chauhan/documentation-repo.git' // Replace with your repo URL
+        branch = 'main'
+        packerTemplate = 'packer-template.json'
+        awsRegion = 'us-east-1' 
+        awsCredentialsId = 'AWS' 
+    }
+    
+    stages {
+        stage('Checkout GIT') {
+            steps {
+                git url: "${gitRepo}", branch: "${branch}"
+            }
+        }
+        
+        stage('Build AMI') {
+            steps {
+                script {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: "${awsCredentialsId}"]]) {
+                        writeFile file: 'packer-config.pkr.hcl', text: '''
+packer {
+  required_plugins {
+    amazon = {
+      source  = "github.com/hashicorp/amazon"
+      version = "~> 1"
+    }
+  }
+}
+'''
+                        sh "packer init ."
+                        sh "packer build -var 'region=${awsRegion}' ${packerTemplate}"
+                    }
+                }
+            }
+        }
+        
+        stage('Validate Packer Template') {
+            steps {
+                sh "packer validate ${packerTemplate}"
+            }
+        }
+        
+        stage('AMI Build Status') {
+            steps {
+                echo 'AMI build successful'
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline completed successfully'
+        }
+        
+        failure {
+            echo 'Pipeline failed'
+            script {
+                currentBuild.result = 'FAILURE'
+            }
+        }
+    }
+}
