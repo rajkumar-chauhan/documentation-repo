@@ -2,11 +2,11 @@ pipeline {
     agent any
     
     environment {
-        gitRepo = 'https://github.com/rajkumar-chauhan/documentation-repo.git' // Replace with your repo URL
+        gitRepo = 'https://github.com/rajkumar-chauhan/documentation-repo.git' 
         branch = 'main'
         packerTemplate = 'packer-template.json'
-        awsRegion = 'us-east-1' 
-        awsCredentialsId = 'AWS' 
+        awsRegion = 'us-east-1'
+        awsCredentialsId = 'AWS'
     }
     
     stages {
@@ -16,7 +16,7 @@ pipeline {
             }
         }
         
-        stage('Build AMI') {
+        stage('Initialize Packer') {
             steps {
                 script {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: "${awsCredentialsId}"]]) {
@@ -31,7 +31,6 @@ packer {
 }
 '''
                         sh "packer init ."
-                        sh "packer build -var 'region=${awsRegion}' ${packerTemplate}"
                     }
                 }
             }
@@ -39,7 +38,19 @@ packer {
         
         stage('Validate Packer Template') {
             steps {
-                sh "packer validate ${packerTemplate}"
+                script {
+                    sh "packer validate ${packerTemplate}"
+                }
+            }
+        }
+
+        stage('Build AMI') {
+            steps {
+                script {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: "${awsCredentialsId}"]]) {
+                        sh "packer build -var 'region=${awsRegion}' ${packerTemplate}"
+                    }
+                }
             }
         }
         
